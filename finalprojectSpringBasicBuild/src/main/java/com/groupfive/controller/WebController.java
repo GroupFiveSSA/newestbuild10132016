@@ -58,7 +58,7 @@ public class WebController {
 //		if(request.getParameter("name") != null){
 //			mv.addObject("name", request.getParameter("name"));
 //		}//end if statement
-		mv.setViewName("home");
+		mv.setViewName("home1");
 		return mv;
 	}//endModelAndView home1
 	
@@ -80,7 +80,7 @@ public class WebController {
 		return mv;
 	}//endModelAndView sitemap
 	
-<<<<<<< HEAD
+
 	@RequestMapping("/PostLoginPageforWidgets")
     public ModelAndView PostLoginPageforWidgets(HttpServletRequest request, ModelAndView mv){
 //        if(request.getParameter("name") != null){
@@ -89,16 +89,7 @@ public class WebController {
         mv.setViewName("PostLoginPageforWidgets");
         return mv;
     }//endModelAndView PostLoginPageforWidgets
-=======
-		@RequestMapping("/PostLoginPageforWidgets")
-	public ModelAndView PostLoginPageforWidgets(HttpServletRequest request, ModelAndView mv){
-//		if(request.getParameter("name") != null){
-//			mv.addObject("name", request.getParameter("name"));
-//		}//end if statement
-		mv.setViewName("PostLoginPageforWidgets");
-		return mv;
-	}//endModelAndView Developer Contact Page
->>>>>>> 02b0c91c36c9df7fc129f6f0f9c1fa4240a70257
+
 
 
 }//end class
