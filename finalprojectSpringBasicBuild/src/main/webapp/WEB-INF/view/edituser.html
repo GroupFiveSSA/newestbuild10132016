@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BANR Home</title>
+<!--bootstrap-->
+<link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"></link>
+<!-- Angular Material style sheet -->
+<link rel="stylesheet"
+    href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"></link>
+</head>
+<body ng-app="angularApp">
+    <div ng-controller="UserCtrl">
+        <br /> <br />
+      
+        <table>
+        <thead>
+               <tr ng-repeat="user in users">
+                    
+                    <td style = "font-size: 25px;">Review/Edit: {{user.firstName }}</td>
+                    </tr>
+                    </thead>
+                    </table>
+                   
+        <h2 ng-repeat="users in users"> {{ user.firstName }}</h2>
+        <table class="table table-striped table-bordered" id="userTable"
+            style="width: 100%">
+            <thead>
+               <tr ng-repeat="user in users">
+                    <th>ID</th>
+                    <td>{{ user.userId }}</td>
+                    </tr>
+                      <tr ng-repeat="user in users">
+                    <th>First Name</th>
+                    <td>{{ user.firstName }}</td>
+                    </tr>
+                      <tr ng-repeat="user in users">
+                    <th>Last Name</th>
+                    <td>{{ user.lastName }}</td>
+                    </tr>
+                      <tr ng-repeat="user in users">
+                    <th>Email</th>
+                    <td>{{ user.email }}</td>
+                    </tr>
+                      <tr ng-repeat="user in users">
+                    <th>Address Line 1</th>
+                    <td>{{ user.addressline1 }}</td>
+                    </tr>
+                      <tr ng-repeat="user in users">
+                    <th>Address Line 2</th>
+                    <td>{{ user.addressline2 }}</td>
+
+  					<tr ng-repeat="user in users">
+                    <th>City</th>
+                    <td>{{ user.city }}</td>
+                    </tr>         
+                    
+                      <tr ng-repeat="user in users">
+                    <th>State</th>
+                    <td>{{ user.state }}</td>
+                    </tr>        
+                    
+                      <tr ng-repeat="user in users">
+                    <th>Zip Code</th>
+                    <td>{{ user.zipcode }}</td>
+                    </tr>
+                    
+                      <tr ng-repeat="user in users">
+                    <th>Password</th>
+                    <td>{{ user.password }}</td>
+                    </tr>
+            </thead>
+              </td>
+                </tr>
+            </tbody>
+        </table>
+            
+                        <button ng-click="editUser(user.userId)"
+                            class="btn btn-success">EDIT</button>
+                        <button ng-click="deleteUser(user.userId)"
+                            class="btn btn-danger">DELETE</button>
+                  
+        <div style="display: none">
+            <div class="md-dialog-container" id="userForm">
+                <md-dialog>
+                <h2>{{action}} User</h2>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-2 control-label">First
+                            Name</label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.firstName" type="text"
+                                class="form-control" id="firstName" name="firstName"
+                                placeholder="First Name" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="col-sm-2 control-label">Last
+                            Name</label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.lastName" type="text"
+                                class="form-control" id="lastName" name="lastName"
+                                placeholder="Last Name" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email
+                            Address</label>
+                        <div class="col-sm-10">
+                            <input type="email" ng-model="user.email"
+                                class="form-control" id="email" name="email"
+                                placeholder="user@example.com" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressline1" class="col-sm-2 control-label">Address Line 1
+                            </label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.addressline1" type="text"
+                                class="form-control" id="addressline1" name="addressline1"
+                                placeholder="123 Anywhere Street"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="addressline2" class="col-sm-2 control-label">Address Line 2
+                            </label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.addressline2" type="text"
+                                class="form-control" id="addressline2" name="addressline2"
+                                placeholder="Apartment C"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.city" type="text"
+                                class="form-control" id="city" name="city"
+                                placeholder="City" required="true"></input>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="state" class="col-sm-2 control-label">State</label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.state" type="text"
+                                class="form-control" id="state" name="state"
+                                placeholder="State" required="true"></input>
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.zipcode" type="text"
+                                class="form-control" id="zipcode" name="city"
+                                placeholder="Zip Code" required="true"></input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input ng-model="user.password" type="text"
+                                class="form-control" id="password" name="password"
+                                aria-describedby="helpBlock" required=""></input> <span
+                                id="helpBlock" class="help-block">Password should be at
+                                least 8 characters, 1 upppercase, 1 lowercase, 1 special
+                                character, and one number</span>
+                        </div>
+                    </div>
+                  
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <span ng-show="addFlag"><button ng-click="addUser()"
+                                    type="submit" class="btn btn-default">Add User</button></span> <span
+                                ng-show="editFlag"><button
+                                    ng-click="updateUser(user.userId)" type="submit"
+                                    class="btn btn-default">Update User</button></span>
+                        </div>
+                    </div>
+                </form>
+                </md-dialog>
+            </div>
+        </div>
+    </div>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js">
+</script>
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script
+        src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    <script type="text/javascript">
+var app = angular.module('angularApp', ['ngResource', 'ngMaterial']);
+app.factory('UserService', ['$resource', function ($resource) {
+    return $resource(
+        'http://localhost:8080/user/:userId',
+        {userId: '@uid'},
+        {update: {method: 'PUT'}}
+    );
+}]);
+app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
+    function($scope, UserService, $mdDialog) {
+        $scope.users = [];
+        $scope.user  = new UserService();
+        $scope.action = "Add";
+        $scope.addFlag = true;
+        $scope.editFlag = false;
+        $scope.getAllUsers = function(){
+            $scope.users = UserService.query()
+        }
+        $scope.getAllUsers();
+        $scope.deleteUser = function(id){
+            $scope.user = UserService.delete({ userId: id},
+                function() {
+                    $scope.user = new UserService();
+                    $scope.getAllUsers(); 
+                });
+        }
+        $scope.addUser = function(){
+          $scope.user.$save(
+              function(user){ 
+                 $scope.user = new UserService();
+                 $scope.getAllUsers();
+                 $mdDialog.hide();
+              },
+              function(err){
+                 console.log(err.status);
+              }
+          );     
+        }; 
+        $scope.editUser = function(id){
+            $scope.user = UserService.get({ userId: id}, function() { 
+                $scope.showForm();
+                $scope.action = "Update"
+                $scope.addFlag = false;
+                $scope.editFlag = true;
+            });
+        };  
+        $scope.updateUser = function(id){
+            $scope.user.$update({ userId: id},
+                function(user){
+                    $scope.user = new UserService();
+                    $scope.getAllUsers();
+                    $mdDialog.hide();
+                }
+            )
+        };
+        $scope.addButtonClick = function(){
+            $scope.showForm();
+            $scope.user = new UserService();
+            $scope.addFlag = true;
+            $scope.editFlag = false;
+            $scope.action = "Add";
+        }
+        $scope.showForm = function(ev) {
+            $mdDialog.show({
+              contentElement: '#userForm',
+              parent: angular.element(document.body),
+              targetEvent: ev,
+              clickOutsideToClose: true
+            });
+          
+        };
+        
+	}]
+)
+</script>
+</body>
+</html>
+      	
