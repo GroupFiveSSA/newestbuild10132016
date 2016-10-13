@@ -10,5 +10,6 @@ public interface IUserDAO {
 	boolean addUser(User user);
 	void updateUser(User user);
 	void deleteUser(int userId);
+	List<User> verifyPassword(String userEmail, String password);
 
 }

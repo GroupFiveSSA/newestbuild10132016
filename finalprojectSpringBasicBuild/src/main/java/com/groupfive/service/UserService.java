@@ -45,5 +45,10 @@ public class UserService implements IUserService {
 		userDAO.deleteUser(userId);
 		
 	}
+	
+	@Override
+	public List<User> verifyPassword( String userEmail, String password){
+		return userDAO.verifyPassword(userEmail, password);
+	}
 
 }

@@ -1,6 +1,9 @@
 package com.groupfive.controller;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -56,6 +59,30 @@ public class UserController {
 		userService.deleteUser(userId);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
+	
+	
+	//opens session for user login
+	@RequestMapping("/home1", method = RequestMethod.POST);
+	public ResponseEntity<List<User>> userLoginPlus(@Valid @RequestBody User member, HttpSession sessionObj){
+	List<User> success = userService.verifyPassword(member.getEmail(), member.getPassword());
+		
+		String isValid = member.getPassword();
+		if(!(success.get(0).getPassword().equals(isValid))){
+			String invalid = " error ";
+			System.out.println(invalid);
+			
+			sessionObj.setAttribute("Error", "Username or password invalid!");
+			return null;
+			}else{
+				
+				sessionObj.setAttribute("user", success.get(0));
+				
+				return new ResponseEntity<List<User>>(success, HttpStatus.OK);
+			}
+		
+	}
+	
+	
 	
 	
 	

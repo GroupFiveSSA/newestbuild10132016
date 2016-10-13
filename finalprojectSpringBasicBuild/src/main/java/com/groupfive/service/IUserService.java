@@ -12,5 +12,6 @@ public interface IUserService {
 	boolean addUser(User user);
 	void updateUser(User user);
 	void deleteUser(int user_id);
+	List<User> verifyPassword(String userEmail, String password);
 
 }
