@@ -62,7 +62,7 @@ public class UserController {
 	
 	
 	//opens session for user login
-	@RequestMapping("/home1", method = RequestMethod.POST);
+	@RequestMapping(value="/userLogin", method = RequestMethod.POST )
 	public ResponseEntity<List<User>> userLoginPlus(@Valid @RequestBody User member, HttpSession sessionObj){
 	List<User> success = userService.verifyPassword(member.getEmail(), member.getPassword());
 		
@@ -80,6 +80,13 @@ public class UserController {
 				return new ResponseEntity<List<User>>(success, HttpStatus.OK);
 			}
 		
+	}
+	
+	@RequestMapping(value="/userLogout")
+	public ModelAndView userLogout(HttpSession sessionObj, ModelAndView mv){
+		mv.setViewName("index");
+		sessionObj.invalidate();
+		return mv;
 	}
 	
 	
