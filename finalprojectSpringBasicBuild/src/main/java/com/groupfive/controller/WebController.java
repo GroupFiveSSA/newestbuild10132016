@@ -58,7 +58,7 @@ public class WebController {
 //		if(request.getParameter("name") != null){
 //			mv.addObject("name", request.getParameter("name"));
 //		}//end if statement
-		mv.setViewName("home");
+		mv.setViewName("home1");
 		return mv;
 	}//endModelAndView home1
 	
@@ -70,6 +70,16 @@ public class WebController {
 		mv.setViewName("developercontact");
 		return mv;
 	}//endModelAndView developercontact
+
+
+	@RequestMapping("/employment")
+	public ModelAndView employment(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("employment");
+		return mv;
+	}//endModelAndView employment
 	
 	@RequestMapping("/sitemap")
 	public ModelAndView sitemap(HttpServletRequest request, ModelAndView mv){
@@ -80,7 +90,35 @@ public class WebController {
 		return mv;
 	}//endModelAndView sitemap
 	
-<<<<<<< HEAD
+	
+	@RequestMapping("/food")
+	public ModelAndView food(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("food");
+		return mv;
+	}//endModelAndView food
+	
+	@RequestMapping("/about")
+	public ModelAndView about(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("about");
+		return mv;
+	}//endModelAndView about
+	
+	
+	@RequestMapping("/services")
+	public ModelAndView services(HttpServletRequest request, ModelAndView mv){
+//		if(request.getParameter("name") != null){
+//			mv.addObject("name", request.getParameter("name"));
+//		}//end if statement
+		mv.setViewName("services");
+		return mv;
+	}//endModelAndView services
+
 	@RequestMapping("/PostLoginPageforWidgets")
     public ModelAndView PostLoginPageforWidgets(HttpServletRequest request, ModelAndView mv){
 //        if(request.getParameter("name") != null){
@@ -89,16 +127,9 @@ public class WebController {
         mv.setViewName("PostLoginPageforWidgets");
         return mv;
     }//endModelAndView PostLoginPageforWidgets
-=======
-		@RequestMapping("/PostLoginPageforWidgets")
-	public ModelAndView PostLoginPageforWidgets(HttpServletRequest request, ModelAndView mv){
-//		if(request.getParameter("name") != null){
-//			mv.addObject("name", request.getParameter("name"));
-//		}//end if statement
-		mv.setViewName("PostLoginPageforWidgets");
-		return mv;
-	}//endModelAndView Developer Contact Page
->>>>>>> 02b0c91c36c9df7fc129f6f0f9c1fa4240a70257
+
+	
+
 
 
 }//end class

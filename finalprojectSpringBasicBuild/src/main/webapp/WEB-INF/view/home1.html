@@ -52,10 +52,10 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" align="right" color="white">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="/about.html">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="/services.html">Services</a>
                     </li>
                    
                     <li>
@@ -75,12 +75,12 @@
 
         <!-- Heading Row -->
         <div class="row">
-            <div class="col-md-8"><br><br><br><br><br>
+            <div class="col-md-8"><br><br><br><br>
                 <img class="img-responsive img-rounded" src="../images/people.jpg" height="350" width="900" alt="">
 
             </div>
             <!-- /.col-md-8 -->
-            <div class="col-md-4"><br><br><br><br><br><br>
+            <div class="col-md-4"><br><br><br><br>
                 <h1>Basic Assistance Needs Resource (BANR)</h1>
                 <p>We provide the connections needed for those in need to find vital community resources.  Please create an account or sign in below to use this free service.</p>
                <div ng-controller="UserCtrl">
@@ -381,42 +381,44 @@ app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
         <div class="row">
             <div class="col-md-4 portfolio-item">
                 <a href="#">
-                    <img src="../../images/house.jpg" height="150" width="200"  alt="">
+                   <center><img src="../../images/house.jpg" height="150" width="200"  alt=""></center> 
                 </a>
-                <h2>Housing</h2>
+               <center><h2>Housing</h2></center> 
                 <p>Using your information, we will provide contact information and directions to local HUD Counseling Offices that can assist you in finding a home.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+                
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4 portfolio-item">
                 <a href="#">
-                    <img src="../../images/jobs.jpg" height="150" width="200"  alt="">
+                <center><img src="../../images/jobs.jpg" height="150" width="200"  alt=""></center>    
                 </a>
-                <h2>Employment</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+                <center><h2>Employment</h2></center>
+                <p>A library of links to helpful information regarding employment.  From resume help to local job opportunities, we provide a gateway to employment resources.</p>
+                <center><a class="btn btn-default" href="/employment.html">More Info</a></center>
             </div>
             <!-- /.col-md-4 -->
             <div class="col-md-4 portfolio-item">
                 <a href="#">
-                    <img src="../../images/groceries.jpg" height="150" width="200"  alt="">
+                    <center><img src="../../images/groceries.jpg" height="150" width="200"  alt=""></center>
                 </a>
-                <h2>Food</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe rem nisi accusamus error velit animi non ipsa placeat. Recusandae, suscipit, soluta quibusdam accusamus a veniam quaerat eveniet eligendi dolor consectetur.</p>
-                <a class="btn btn-default" href="#">More Info</a>
+                <center><h2>Food</h2></center>
+                <p>Find helpful information and links to programs that provide food assistance in your area.</p>
+               <center> <a class="btn btn-default" href="/food.html">More Info</a></center>
             </div>
             <!-- /.col-md-4 -->
         </div>
         <!-- /.row -->
 
         <!-- Footer -->
-        <footer>
+        
+        <footer><center>
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; groupFive 2016</p>
                <p><a href="/directory.html">Site Map</a></p>
                 </div>
             </div>
+            </center>
         </footer>
 
     </div>
