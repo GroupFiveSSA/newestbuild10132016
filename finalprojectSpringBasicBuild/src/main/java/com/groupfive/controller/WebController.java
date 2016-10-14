@@ -90,6 +90,14 @@ public class WebController {
         return mv;
     }//endModelAndView PostLoginPageforWidgets
 
+	@RequestMapping("/adminDB")
+    public ModelAndView adminDB(HttpServletRequest request, ModelAndView mv){
+//        if(request.getParameter("name") != null){
+//            mv.addObject("name", request.getParameter("name"));
+//        }//end if statement
+        mv.setViewName("adminDB");
+        return mv;
+    }//endModelAndView adminDB
 
 
 }//end class
