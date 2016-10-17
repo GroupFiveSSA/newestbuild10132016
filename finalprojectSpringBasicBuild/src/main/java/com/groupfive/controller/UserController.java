@@ -9,6 +9,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,28 +64,40 @@ public class UserController {
 	
 	//opens session for user login
 	@RequestMapping(value="/userLogin", method = RequestMethod.POST )
-	public ResponseEntity<List<User>> userLoginPlus(@Valid @RequestBody User member, HttpSession sessionObj){
+	public ModelAndView userLoginPlus(@ModelAttribute User member, HttpSession sessionObj, ModelAndView mv){
+	mv.setViewName("home1");
 	List<User> success = userService.verifyPassword(member.getEmail(), member.getPassword());
+	
+		if(success.size() == 0){
+			
+			sessionObj.setAttribute("error", "Username not found");
+			return mv;
+			
+		}
 		
 		String isValid = member.getPassword();
 		if(!(success.get(0).getPassword().equals(isValid))){
-			String invalid = " error ";
-			System.out.println(invalid);
 			
-			sessionObj.setAttribute("Error", "Username or password invalid!");
-			return null;
+			
+			sessionObj.setAttribute("error", "Username or password invalid!");
+			
+			return mv;
+			
 			}else{
 				
-				sessionObj.setAttribute("user", success.get(0));
 				
-				return new ResponseEntity<List<User>>(success, HttpStatus.OK);
+				sessionObj.setAttribute("user", success.get(0));
+				mv.setViewName("PostLoginPageforWidgets");
+				
+				return mv;
+				
 			}
 		
 	}
 	
 	@RequestMapping(value="/userLogout")
 	public ModelAndView userLogout(HttpSession sessionObj, ModelAndView mv){
-		mv.setViewName("index");
+		mv.setViewName("home1");
 		sessionObj.invalidate();
 		return mv;
 	}
