@@ -246,7 +246,7 @@
    									<form method="POST" action="/userLogin" id="loginForm" name="loginForm" style="width: 80%">
    									
    										<table id="fntable"><center><h3>&nbsp&nbspLogin</h3></center>
-   											<button>Submit</a></button>
+   											<button type="submit">Submit</button>
    											<tr>
    												<td style="width:30%">User Email:</td>
      											<td> <input id="email" name="email" type="text" class="form-control" placeholder = "E-mail"></td>
@@ -287,7 +287,7 @@
 		<hr>
 		
    			<!-- JQuery -->
-			<script type="text/javascript" src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+			<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 			
 			<!-- Angular -->
@@ -388,7 +388,7 @@
         
         $scope.loginButtonClick = function(){
             $scope.showFormB();
-            window.location = "/PostLoginPageforWidgets"
+            //window.location = "/PostLoginforWidgets"
         }
         
         $scope.showFormB = function(ev) {
@@ -400,81 +400,12 @@
             }); 
         };
         
+
 	}]
 )
 
 
-//$(function(){
-	//jQuery.validator.addMethod("passwordCheck", function(value, element) {
-  
-  //return this.optional( element ) || /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^\&*\)\(+=._-])[0-9a-zA-Z!@#\$%\^\&*\)\(+=._-]{8,}$/.test( value );
-      //}, 'Please enter a valid password.');
 
-	//$( "#userForm" ).validate({
-         //rules: {
-            //firstName: {
-              // required: true,
-                //minlength: 2
-            //},
-
-           // lastName: {
-                //required: true,
-               // minlength: 2
-           // },
-           
-            //email: {
-               	//required: true,
-                //email: true
-            //},
-
-           // addressline1: {
-              // required: true,
-              // minlength: 2
-           // },
-           
-            //addressline2: {
-              // required: false,
-               //minlength: 2
-            //},
-           
-            //city: {
-              // required: true,
-               //minlength: 2
-           // },
-            
-            //state: {
-              //  required: true,
-                //minlength: 2
-            // },
-             
-             //zipcode: {
-            	// required: true,
-            	 //minlength: 2
-             //},
-           
-    		 //password: {
-    			//required: true,
-    			//minlength: 8,
-    			//passwordCheck: true
-    		 //},
-
-    		 //verifyPassword: {
-      			//equalTo: "#password"
-    		 //}
-         //},
-
-  		//errorClass: "text-danger",
-
-  		 //messages: {
-    	 	//password: {
-    	 		//passwordCheck: "Password should be at least 8 characters, 1 upppercase, 1 lowercase, 1 special character, and one number",
-    	 		//required: "Passwords are required."
-  				//}
-		//}
-       
-    //});
-
- //})
 
 
 
