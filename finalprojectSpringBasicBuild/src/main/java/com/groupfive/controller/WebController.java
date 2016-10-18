@@ -81,7 +81,6 @@ public class WebController {
 		return mv;
 	}//endModelAndView sitemap
 	
-	
 	@RequestMapping("/about")
 	public ModelAndView about(HttpServletRequest request, ModelAndView mv){
 //		if(request.getParameter("name") != null){
@@ -101,6 +100,7 @@ public class WebController {
 		return mv;
 	}//endModelAndView services
 
+
 	@RequestMapping("/PostLoginPageforWidgets")
     public ModelAndView PostLoginPageforWidgets(HttpServletRequest request, ModelAndView mv){
 //        if(request.getParameter("name") != null){
@@ -110,7 +110,15 @@ public class WebController {
         return mv;
     }//endModelAndView PostLoginPageforWidgets
 
-	
+	@RequestMapping("/sandbox")
+    public ModelAndView sandbox(HttpServletRequest request, ModelAndView mv){
+//        if(request.getParameter("name") != null){
+//            mv.addObject("name", request.getParameter("name"));
+//        }//end if statement
+        mv.setViewName("sandbox");
+        return mv;
+    }//endModelAndView sandbox
+
 
 
 

@@ -1,11 +1,15 @@
 package com.groupfive.controller;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +60,49 @@ public class UserController {
 		userService.deleteUser(userId);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
+	
+	
+	//opens session for user login
+	@RequestMapping(value="/userLogin", method = RequestMethod.POST )
+	public ModelAndView userLoginPlus(@ModelAttribute User member, HttpSession sessionObj, ModelAndView mv){
+	mv.setViewName("home1");
+	List<User> success = userService.verifyPassword(member.getEmail(), member.getPassword());
+	
+		if(success.size() == 0){
+			
+			sessionObj.setAttribute("error", "Username not found");
+			return mv;
+			
+		}
+		
+		String isValid = member.getPassword();
+		if(!(success.get(0).getPassword().equals(isValid))){
+			
+			
+			sessionObj.setAttribute("error", "Username or password invalid!");
+			
+			return mv;
+			
+			}else{
+				
+				
+				sessionObj.setAttribute("user", success.get(0));
+				mv.setViewName("PostLoginPageforWidgets");
+				
+				return mv;
+				
+			}
+		
+	}
+	
+	@RequestMapping(value="/userLogout")
+	public ModelAndView userLogout(HttpSession sessionObj, ModelAndView mv){
+		mv.setViewName("home1");
+		sessionObj.invalidate();
+		return mv;
+	}
+	
+	
 	
 	
 	

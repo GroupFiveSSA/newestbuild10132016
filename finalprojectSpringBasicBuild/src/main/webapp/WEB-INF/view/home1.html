@@ -29,8 +29,14 @@
 	href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css"></link>
 </head>
 
+
+
+
+
+
 <body ng-app="angularApp">
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
+
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"
 		style="background-color: #002A5C">
 		<div class="container" style="height: 66px">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -67,18 +73,23 @@
 	<br>
 	<br>
 
-	<!-- Page Content -->
-	<div class="container">
 
-		<!-- Heading Row -->
-		<div class="row">
-			<div class="col-md-7">
-				<br> <br> <br> <img
+
+
+    <!-- Page Content -->
+    
+    <div class="container">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-7">
+            <br> <br> <br> <img
 					class="img-responsive img-rounded" src="../images/people.jpg"
 					height="350" width="900" alt="">
-			</div>
-			<!-- /.col-md-8 -->
-			<div class="col-md-5" style="text-align: center">
+            </div>
+            
+            <!-- /.col-md-8 -->
+            <div class="col-md-5" style="text-align: center">
 				<br> <br> <br> <br>
 				<h1>Basic Assistance Needs Resource (BANR)</h1>
 				<p>The U.S. Department of Housing and Urban Development sponsors
@@ -86,232 +97,254 @@
 					on buying a home, renting, defaults, foreclosures, and credit
 					issues. Login or create a free account to see the best options for
 					your family.</p>
-				<div ng-controller="UserCtrl">
-					<button ng-click="loginButtonClick()" class="btn btn-primary">Login</button>
-					<button ng-click="addButtonClick()" class="btn btn-primary">Register</button>
-					<div style="display: none">
-						<div class="md-dialog-container" id="userForm">
-							<md-dialog> <div style="background-color: #002A5C; color: white"><br>
-								<h2 style="color: white; text-align:center">
-									<img src="../imgs/icons/handholding.jpg"
-										style="width: 80px; height: 80px;"> Register User
-								</h2>
-							</div>
-							
-							<div style="background-color: #002A5C; color: white">
-								<form class="form-horizontal" style="">
-									<div class="form-group">
-										<br> <br> <label for="firstName"
-											class="col-sm-2 control-label">First Name</label>
-										<div class="col-sm-5">
-											<input ng-model="user.firstName" type="text"
-												class="form-control" id="firstName" name="firstName"
-												placeholder="First Name" required="true"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="lastName" class="col-sm-2 control-label">Last
-											Name</label>
-										<div class="col-sm-5">
-											<input ng-model="user.lastName" type="text"
-												class="form-control" id="lastName" name="lastName"
-												placeholder="Last Name" required="true"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="email" class="col-sm-2 control-label">Email
-											Address</label>
-										<div class="col-sm-5">
-											<input type="email" ng-model="user.email"
-												class="form-control" id="email" name="email"
-												placeholder="user@example.com" required="true"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="addressline1" class="col-sm-2 control-label">Address
-											Line 1</label>
-										<div class="col-sm-5">
-											<input ng-model="user.addressline1" type="text"
-												class="form-control" id="addressline1" name="addressline1"
-												placeholder="123 Anywhere Street"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="addressline2" class="col-sm-2 control-label">Address
-											Line 2 </label>
-										<div class="col-sm-5">
-											<input ng-model="user.addressline2" type="text"
-												class="form-control" id="addressline2" name="addressline2"
-												placeholder="Apartment C"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="city" class="col-sm-2 control-label">City</label>
-										<div class="col-sm-5">
-											<input ng-model="user.city" type="text" class="form-control"
-												id="city" name="city" placeholder="City" required="true"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="state" class="col-sm-2 control-label">State</label>
-										<div class="col-sm-5">
-											<input ng-model="user.state" type="text" class="form-control"
-												id="state" name="state" placeholder="State" required="true"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="zipcode" class="col-sm-2 control-label">Zip
-											Code</label>
-										<div class="col-sm-5">
-											<input ng-model="user.zipcode" type="text"
-												class="form-control" id="zipcode" name="city"
-												placeholder="Zip Code" required="true"></input>
-										</div>
-									</div>
-									<div class="form-group">
-										<label for="password" class="col-sm-2 control-label">Password</label>
-										<div class="col-sm-5">
-											<input ng-model="user.password" type="text"
-												class="form-control" id="password" name="password"
-												aria-describedby="helpBlock" required=""></input> <span
-												id="helpBlock" class="help-block" style="color: white">Password
-												should be at least 8 characters, 1 upppercase, 1 lowercase,
-												1 special character, and one number</span>
-										</div>
-									</div>
-
-									<div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10">
-											<span ng-show="addFlag"><button ng-click="addUser()"
-													type="submit" class="btn btn-success">Register</button></span>
-										</div>
-									</div>
-							</div>
-							</md-dialog>
-						</div>
-					</div>
-
-					<div style="display: none">
-						<div class="md-dialog-container" id="loginForm">
-
-							<md-dialog>
-							<div ng-app="">
-								<form id="loginForm" name="loginForm" style="width: 80%">
-									<table id="fntable">
-										<center>
-											<h3>&nbsp&nbspLogin</h3>
-										</center>
-										<tr>
-											<td style="width: 30%">User ID:</td>
-											<td><input id="userId" name="id" type="text"
-												class="form-control" ng-model="id" placeholder="User ID"></td>
-										</tr>
-									</table>
-									<table>
-
-										<span ng-show="loginForm.id.$error.minlength">First
-											Name Must be At Least 4 Characters</span>
-										<tr>
-											<td style="width: 30%">Password:</td>
-											<td><input id="password" name="password" type="text"
-												class="form-control" ng-model="password"
-												placeholder="Password"></td>
-										</tr>
-									</table>
-									<table>
-
-										</form>
-										<button ng-disabled="loginForm.$invalid"
-											onclick="checkLogin()">
-											Submit</a>
-										</button>
-										</div>
-									</table>
-								</form>
-							</md-dialog>
-						</div>
-
-					</div>
-
-
-
-
-
-
-
-
-
-
-
-					<!-- /.navbar-collapse -->
-				</div>
-				<!-- /.container -->
-				</nav>
-			</div>
-		</div>
-		<br> <br>
-		<hr
-			style="display: block; margin-top: 0.5em; margin-bottom: 0.5em; margin-left: auto; margin-right: auto; border-style: inset; border-width: 8px;">
-		<br>
-
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js">
-</script>
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
-		<script
-			src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
-		<script
-			src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
-		<script
-			src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
-		<!-- Angular Material Library -->
-		<script
-			src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-		<script type="text/javascript">
-    
-    
-    
+                
+               <div ng-controller="UserCtrl">
+    			<div class="alert alert-danger" th:if="${session.error != null}" th:text="${session.error}">Error if exists</div>
+        		<button ng-click="loginButtonClick()" class="btn btn-primary">Login</button>
+        		<button ng-click="addButtonClick()" class="btn btn-primary">Register</button>
+            
+       
  
-    	       
-var app = angular.module('angularApp', ['ngResource', 'ngMaterial']);
-app.factory('UserService', ['$resource', function ($resource) {
-    return $resource(
-        'http://localhost:8080/user/:userId',
-        {userId: '@uid'},
-        {update: {method: 'PUT'}}
-    );
-}]);
-app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
-    function($scope, UserService, $mdDialog) {
-        $scope.users = [];
-        $scope.user  = new UserService();
-        $scope.action = "Add";
-        $scope.addFlag = true;
-        $scope.editFlag = false;
-        $scope.getAllUsers = function(){
-            $scope.users = UserService.query()
-        }
-        $scope.getAllUsers();
-        $scope.deleteUser = function(id){
-            $scope.user = UserService.delete({ userId: id},
-                function() {
-                    $scope.user = new UserService();
-                    $scope.getAllUsers(); 
-                });
-        }
-        $scope.addUser = function(){
-          $scope.user.$save(
-              function(user){ 
-                 $scope.user = new UserService();
-                 $scope.getAllUsers();
-                 $mdDialog.hide();
-              },
-              function(err){
-                 console.log(err.status);
-              }
-          );     
-        }; 
+        			<div style="display: none">
+            			<div class="md-dialog-container" id="userForm">
+            
+                			<md-dialog><br>
+                			<h2 style ="color:#002A5C">
+                				<img src="../imgs/icons/handholding.jpg"
+										style="width: 80px; height: 80px;"> Register User</h2>
+                				
+                				<br>
+                				
+                 			<div style="background-color:#002A5C; color:white">
+                				<form id = "userForm" class="form-horizontal">
+                    				<div class="form-group">
+                    				<br><br>
+                        				<label for="firstName" class="col-sm-2 control-label">First Name</label>
+                            				<div class="col-sm-5">
+                            					<input ng-model="user.firstName" type="text"
+                                				class="form-control" id="firstName" name="firstName"
+                                				placeholder="First Name" required="true"></input>
+                        					</div>
+                    				</div>
+                    				
+                    				<div class="form-group">
+                        				<label for="lastName" class="col-sm-2 control-label">Last Name</label>  
+                        					<div class="col-sm-5">
+                            					<input ng-model="user.lastName" type="text"
+                                				class="form-control" id="lastName" name="lastName"
+                                				placeholder="Last Name" required="true"></input>
+                        					</div>
+                    				</div>
+                    				
+                    				<div class="form-group">
+                        				<label for="email" class="col-sm-2 control-label">Email Address</label>
+                            				<div class="col-sm-5">
+                            					<input type="email" ng-model="user.email"
+                                				class="form-control" id="email" name="email"
+                                				placeholder="user@example.com" required="true"></input>
+                        					</div>
+                    				</div>
+                    				
+                    				<div class="form-group">
+                        				<label for="addressline1" class="col-sm-2 control-label">Address Line 1</label>
+                        					<div class="col-sm-5">
+                            					<input ng-model="user.addressline1" type="text"
+                                				class="form-control" id="addressline1" name="addressline1"
+                                				placeholder="123 Anywhere Street"></input>
+                        					</div>
+                    					</div>
+                    					
+                    					<div class="form-group">
+                        					<label for="addressline2" class="col-sm-2 control-label">Address Line 2</label>
+                        						<div class="col-sm-5">
+                            						<input ng-model="user.addressline2" type="text"
+                                					class="form-control" id="addressline2" name="addressline2"
+                                					placeholder="Apartment C"></input>
+                        						</div>
+                    					</div>
+                    					
+                    					<div class="form-group">
+                        					<label for="city" class="col-sm-2 control-label">City</label>
+                        						<div class="col-sm-5">
+                            						<input ng-model="user.city" type="text"
+                                					class="form-control" id="city" name="city"
+                                					placeholder="City" required="true"></input>
+                        						</div>
+                    					</div>
+                    					
+                    					
+                     					<div class="form-group">
+                        					<label for="state" class="col-sm-2 control-label">State</label>
+                        						<div class="col-sm-5">
+                            						<input ng-model="user.state" type="text"
+                                					class="form-control" id="state" name="state"
+                                					placeholder="State" required="true"></input>
+                        						</div>
+                    					</div>
+                    					
+                     					<div class="form-group">
+                        					<label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                        						<div class="col-sm-5">
+                            						<input ng-model="user.zipcode" type="text"
+                                					class="form-control" id="zipcode" name="city"
+                                					placeholder="Zip Code" required="true"></input>
+                        						</div>
+                    					</div>
+                    					
+                    					<div class="form-group">
+                        					<label for="password" class="col-sm-2 control-label">Password</label>
+                        						<div class="col-sm-5">
+                            						<input ng-model="user.password" type="text"
+                                					class="form-control" id="password" name="password"
+                                					aria-describedby="helpBlock" required=""></input> <span
+                                					id="helpBlock" class="help-block" style ="color:white">Password should be at
+                                					least 8 characters, 1 upppercase, 1 lowercase, 1 special
+                                					character, and one number</span>
+                        						</div>
+                    					</div>
+                    					<div class="form-group">
+    										<label for="verifyPassword" class="col-sm-2 control-label">Verify Password</label>
+    											<div class="col-sm-5">
+      												<input type="text" class="form-control" id="verifyPassword" name="verifyPassword">
+    											</div>
+  										</div>
+                  
+                    				<div class="form-group">
+                        				<div class="col-sm-offset-2 col-sm-10">
+                            				<span ng-show="addFlag"><button ng-click="addUser()"
+                                    		type="submit" class="btn btn-success">Register</button></span>
+                       					</div>
+                      			 	</div>
+                    
+                    			</form>
+                    			
+                    		</div>
+                    		
+                			</md-dialog>
+                			
+            			</div>
+   
+   					<!-- close div style display -->
+     				</div>
+     
+     
+     
+     
+     
+     
+     
+     				<div style="display: none">
+            			<div class="md-dialog-container" id="loginForm">
+                			<md-dialog>
+                				<div ng-app="">
+   									<form method="POST" action="/userLogin" id="loginForm" name="loginForm" style="width: 80%">
+   									
+   										<table id="fntable"><center><h3>&nbsp&nbspLogin</h3></center>
+   											<button type="submit">Submit</button>
+   											<tr>
+   												<td style="width:30%">User Email:</td>
+     											<td> <input id="email" name="email" type="text" class="form-control" placeholder = "E-mail"></td>
+     										</tr>
+     										
+   											<span>First Name Must be At Least 4 Characters</span>
+												<tr>
+													<td style="width:30%">Password:</td>
+   													<td>
+   														<input id = "password" name="password" type="text" class="form-control" placeholder = "Password">
+   													</td>
+   													
+   												</tr>
+   											
+   												
+   											</table>
+   											
+   										</form>
+   									</div>
+   
+   							</md-dialog>		
+   						</div>
+                		
+            		</div>
+   
+     			</div>
+     
+            	<!-- close user ctrl -->
+        		</div>
+        
+    		</div>
+    
+    	<!-- close row div -->
+		</div>
+		
+		
+		
+		<hr>
+		
+   			<!-- JQuery -->
+			<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			
+			<!-- Angular -->
+    		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-resource.js"></script>
+    		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js"></script>
+    		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-aria.min.js"></script>
+    		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-messages.min.js"></script>
+    		
+    		<!-- Angular Material Library -->
+    		<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    
+    		<!--JQuery Validate-->
+    		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    		<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/additional-methods.min.js"></script>
+   
+ 
+ 			<script>   	       
+			var app = angular.module('angularApp', ['ngResource', 'ngMaterial']);
+			
+			app.factory('UserService', ['$resource', function ($resource) {
+    			return $resource(
+        			'http://localhost:8080/user/:userId',
+        			{userId: '@uid'},
+        			{update: {method: 'PUT'}}
+    			);
+			}]);
+			
+			app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
+    		function($scope, UserService, $mdDialog) {
+        		$scope.users = [];
+        		$scope.user  = new UserService();
+        		$scope.action = "Add";
+        		$scope.addFlag = true;
+        		$scope.editFlag = false;
+        		
+        		$scope.getAllUsers = function(){
+            		$scope.users = UserService.query()
+        		}
+        		
+        		$scope.getAllUsers();
+        		
+        		$scope.deleteUser = function(id){
+            		$scope.user = UserService.delete({ userId: id},
+                	function() {
+                    	$scope.user = new UserService();
+                    	$scope.getAllUsers(); 
+                	});
+        		}
+        		
+        		$scope.addUser = function(){
+          			$scope.user.$save(
+              			function(user){ 
+                 			$scope.user = new UserService();
+                 			$scope.getAllUsers();
+                 			$mdDialog.hide();
+              			},
+              			function(err){
+                 		console.log(err.status);
+              			}
+          			);     
+        		}; 
+        		
         $scope.editUser = function(id){
             $scope.user = UserService.get({ userId: id}, function() { 
                 $scope.showForm();
@@ -349,9 +382,7 @@ app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
         
         $scope.loginButtonClick = function(){
             $scope.showFormB();
-          
- 
-           
+            //window.location = "/PostLoginforWidgets"
         }
         
         $scope.showFormB = function(ev) {
@@ -360,11 +391,11 @@ app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
               parent: angular.element(document.body),
               targetEvent: ev,
               clickOutsideToClose: true
-            });
-          
+            }); 
         };
         
-}]
+
+	}]
 )
 
 
@@ -373,9 +404,11 @@ app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
 
 
 
-</script>
 
-		<script>
+
+</script> 
+
+<script>
 
 
 
@@ -460,6 +493,11 @@ app.controller('UserCtrl', ['$scope', 'UserService', '$mdDialog',
 		</footer>
 		<!-- Bootstrap Core JavaScript -->
 		<script src="js/bootstrap.min.js"></script>
+
+
+
+
+
 </body>
 
 </html>
