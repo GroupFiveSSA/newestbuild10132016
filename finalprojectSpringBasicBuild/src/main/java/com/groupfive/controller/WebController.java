@@ -71,15 +71,6 @@ public class WebController {
 		return mv;
 	}//endModelAndView developercontact
 
-
-	@RequestMapping("/employment")
-	public ModelAndView employment(HttpServletRequest request, ModelAndView mv){
-//		if(request.getParameter("name") != null){
-//			mv.addObject("name", request.getParameter("name"));
-//		}//end if statement
-		mv.setViewName("employment");
-		return mv;
-	}//endModelAndView employment
 	
 	@RequestMapping("/sitemap")
 	public ModelAndView sitemap(HttpServletRequest request, ModelAndView mv){
@@ -90,15 +81,6 @@ public class WebController {
 		return mv;
 	}//endModelAndView sitemap
 	
-	
-	@RequestMapping("/food")
-	public ModelAndView food(HttpServletRequest request, ModelAndView mv){
-//		if(request.getParameter("name") != null){
-//			mv.addObject("name", request.getParameter("name"));
-//		}//end if statement
-		mv.setViewName("food");
-		return mv;
-	}//endModelAndView food
 	
 	@RequestMapping("/about")
 	public ModelAndView about(HttpServletRequest request, ModelAndView mv){

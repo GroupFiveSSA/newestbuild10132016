@@ -4586,7 +4586,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
     border-color: #e7e7e7
 }
 .navbar-default .navbar-brand {
-    color: #777
+    color: #fff
 }
 .navbar-default .navbar-brand:focus,
 .navbar-default .navbar-brand:hover {
@@ -4638,34 +4638,34 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-        color: #777
+        color: #fff
     }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
-        color: #333;
+        color: #fff;
         background-color: transparent
     }
     .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
     .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
     .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
-        color: #555;
+        color: #fff;
         background-color: #e7e7e7
     }
     .navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,
     .navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus,
     .navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover {
-        color: #ccc;
+        color: #fff;
         background-color: transparent
     }
 }
 .navbar-default .navbar-link {
-    color: #777
+    color: #fff
 }
 .navbar-default .navbar-link:hover {
     color: #333
 }
 .navbar-default .btn-link {
-    color: #777
+    color: #fff
 }
 .navbar-default .btn-link:focus,
 .navbar-default .btn-link:hover {
@@ -4856,7 +4856,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>.disabled>span,
 .pagination>.disabled>span:focus,
 .pagination>.disabled>span:hover {
-    color: #777;
+    color: #fff;
     cursor: not-allowed;
     background-color: #fff;
     border-color: #ddd
