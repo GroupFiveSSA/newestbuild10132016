@@ -119,7 +119,23 @@ public class WebController {
         return mv;
     }//endModelAndView sandbox
 
-
+	@RequestMapping("/manageprofile")
+    public ModelAndView manageprofile(HttpServletRequest request, ModelAndView mv){
+//        if(request.getParameter("name") != null){
+//            mv.addObject("name", request.getParameter("name"));
+//        }//end if statement
+        mv.setViewName("manageprofile");
+        return mv;
+    }//endModelAndView manageprofile
+	
+	@RequestMapping("/admin")
+    public ModelAndView admin(HttpServletRequest request, ModelAndView mv){
+//        if(request.getParameter("name") != null){
+//            mv.addObject("name", request.getParameter("name"));
+//        }//end if statement
+        mv.setViewName("admin");
+        return mv;
+    }//endModelAndView admin
 
 
 }//end class
