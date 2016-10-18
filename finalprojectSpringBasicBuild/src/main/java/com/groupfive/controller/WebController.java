@@ -89,6 +89,15 @@ public class WebController {
         mv.setViewName("PostLoginPageforWidgets");
         return mv;
     }//endModelAndView PostLoginPageforWidgets
+	
+	@RequestMapping("/sandbox")
+    public ModelAndView sandbox(HttpServletRequest request, ModelAndView mv){
+//        if(request.getParameter("name") != null){
+//            mv.addObject("name", request.getParameter("name"));
+//        }//end if statement
+        mv.setViewName("sandbox");
+        return mv;
+    }//endModelAndView sandbox
 
 
 
